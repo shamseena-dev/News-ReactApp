@@ -24,11 +24,10 @@ class App extends React.Component {
    /*To fetch News API */
 	componentDidMount(){
 		setInterval(()=>this.currentTime(),1000)
-<<<<<<< HEAD
+
 		let url = 'https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=5GzApG1kCNcrlmsHGlzBAHEYIMVZpkEz';
-=======
-		let url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=54406666c6d540ed989bfdf82015ec35';
->>>>>>> 25e30bbb4843215aa1658fe2c0b5314863bd76e1
+
+
 		let url2= 'https://cors-anywhere.herokuapp.com/'+url;
 		fetch(url2).then(resp=>resp.json())
 		.then(data=>{
