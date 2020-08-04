@@ -3,8 +3,8 @@ import './footer.styles.css';
 
 function Footer() {
 	return(
-		<div className="footerDiv"> 
-			<p> Copyrights (c) 2020, Shamz </p>
+		<div className="footerDiv bg-dark"> 
+			<p> &copy;  Shamz . All Rights Reserved.</p>
 			
 		</div>
 

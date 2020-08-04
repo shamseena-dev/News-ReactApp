@@ -46,6 +46,8 @@ class App extends React.Component {
 			
 			return this.setState({sportsNews:data.results})
 		});
+		
+		
 	
 	}
 

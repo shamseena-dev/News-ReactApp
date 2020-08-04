@@ -6,7 +6,7 @@ import './newsdisplay.styles.css';
 
 const Newsdisplay=({articlesArrayList})=> {
        
-		if(Object.keys(articlesArrayList).length === 0){
+		if(Object.keys(articlesArrayList).length === 0 || Object.keys(articlesArrayList).length === -1){
 
 		return (<Empty />)
 	    }
@@ -15,18 +15,19 @@ const Newsdisplay=({articlesArrayList})=> {
 				    
 		    {articlesArrayList.map((article,i)=>{
 
-		    	let imgurl=article.multimedia[2];
+		    	
+		    	let url = article.multimedia.length ? article.multimedia[2].url : "" ;
 		    	
 		    	return (
-		    		<Card 
-		    			key={i}
-			    		title={article.title}
-			    		
-			    		image={article.multimedia[2].url}
-			    		abstract={article.abstract}
-			    		
-			    		url={article.url}
-		    		/>
+		    		<div className="card">
+			<img src={url}	alt="news_image" height="75px" width="75px"/>
+			<div className="content">
+			<h5> {article.title}</h5>
+			
+			 <h6> {article.abstract}</h6>
+			<h6><a href={article.url} target="_blank" rel="noopener noreferrer">Click here</a> to  Read more</h6>			
+		   </div>
+		</div>
 		    	)
 		    })
 

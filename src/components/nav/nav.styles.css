@@ -8,11 +8,15 @@ $blue_color: #0000FF;
 		padding-left :10px;
 		width: 120px;
 	        font-size:18px;
-	        color: grey !important;
+	        color: #fafafa !important;
 	       
 		  
 		
     }
+ .timerDisplay p{
+     color: #eeeeee !important;
+     font-size:15px;
+ }
  .navItem{
 			   	
 				
@@ -20,18 +24,21 @@ $blue_color: #0000FF;
 				padding-top: auto !important;
 				font-size: 18px !important;
 				font-weight:bold !important;
+}
 .navItem:hover{
 					color:white;
 				}
 
 .App-logo {
-  height: 100px;
-  width:auto;
+  height: 60px;
+  width: 220px;
   pointer-events: none;
   margin-left:15px;
 
 }
-
+.navbar{
+	background-color: #0c3864 !important;
+}
 
 @media screen and (max-width: 780px){
 	.navItem{
