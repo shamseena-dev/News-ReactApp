@@ -1,6 +1,6 @@
 
 import React from 'react';
-
+import Card from "../card/card.component";
 import Empty from '../empty/empty.component';
 import './newsdisplay.styles.css';
 
@@ -16,18 +16,13 @@ const Newsdisplay=({articlesArrayList})=> {
 		    {articlesArrayList.map((article,i)=>{
 
 		    	
-		    	let url = article.multimedia.length ? article.multimedia[2].url : "" ;
+		    	let url = article.multimedia ? article.multimedia[3].url : "" ;
 		    	
 		    	return (
-		    		<div className="card">
-			<img src={url}	alt="news_image" height="75px" width="75px"/>
-			
-			<h5> {article.title}</h5>
-			
-			 <h6> {article.abstract}</h6>
-			<h6><a href={article.url} target="_blank" rel="noopener noreferrer">Click here</a> to  Read more</h6>			
-		   
-		</div>
+
+		    		<Card imgurl={url} title={article.title} abstract={article.abstract} url={article.url} />
+
+		    	
 		    	)
 		    })
 

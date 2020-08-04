@@ -1,6 +1,6 @@
 import React from 'react';
 import './nav.styles.css';
-import logo from './logo.png';
+import logo from './poweredby_nytimes_150b.png';
 import {Link} from 'react-router-dom';
 
 function Nav ({timer}) {
@@ -9,7 +9,7 @@ function Nav ({timer}) {
 		<nav className="navbar navbar-expand-md navbar-dark nav1">
 		
 			<div className="logo navbar-brand">
-				<img src={logo} className="App-logo " alt="Logo" width="60px" height="auto"/>
+				<a href="https://developer.nytimes.com"><img src={logo} className="App-logo " alt="Logo" /></a>
 				
 			</div>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,6 +21,8 @@ function Nav ({timer}) {
 				     <li className= "navItem nav-item">Home </li></ Link>
 				<Link to = "/health" className="navItem nav-link" >
 				     <li className= "navItem nav-item">Health </li></ Link>
+				     <Link to = "/sports" className="navItem nav-link" >
+				     <li className= "navItem nav-item">Sports </li></ Link>
 				
 				</ul>
 				<h5 className="timerDisplay"> {timer}</h5>

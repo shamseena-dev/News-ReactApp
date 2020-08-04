@@ -1,16 +1,21 @@
 import React from 'react';
 import './card.styles.css';
 
-const Card=(props)=>{
+const Card=({imgurl,title, abstract, url})=>{
 	return(
+	
+
+
+
+
 		<div className="card">
-			<img src={props.image}	alt="news_image" height="75px" width="75px"/>
+			<img src={imgurl}	alt="news_image" height="75px" width="75px"/>
+	
+			<h5> {title}</h5>
 			
-			<h5> {props.title}</h5>
-			
-			 <h6> {props.abstract}</h6>
-			<h6><a href={props.url} target="_blank" rel="noopener noreferrer">Click here</a> to  Read more</h6>			
-		  
+			 <h6> {abstract}</h6>
+			<h6><a href={url} target="_blank" rel="noopener noreferrer">Click here</a> to  Read more</h6>			
+		   
 		</div>
 		)
 
