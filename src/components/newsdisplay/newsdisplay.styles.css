@@ -6,6 +6,6 @@
 	justify-content: center;
 	flex-wrap: wrap;
 }
-.content{
+.card h6{
    padding:10px;
 }

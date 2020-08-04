@@ -21,12 +21,12 @@ const Newsdisplay=({articlesArrayList})=> {
 		    	return (
 		    		<div className="card">
 			<img src={url}	alt="news_image" height="75px" width="75px"/>
-			<div className="content">
+			
 			<h5> {article.title}</h5>
 			
 			 <h6> {article.abstract}</h6>
 			<h6><a href={article.url} target="_blank" rel="noopener noreferrer">Click here</a> to  Read more</h6>			
-		   </div>
+		   
 		</div>
 		    	)
 		    })
