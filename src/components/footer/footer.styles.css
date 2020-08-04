@@ -10,8 +10,8 @@
 	display: flex;
 	flex-direction: row;
 	justify-content:space-between;
-    p{
+}
+.footerDiv p{
 	padding:10px;
    }
 	
-}

@@ -2,7 +2,7 @@
 import React from 'react';
 import Card from '../card/card.component';
 import Empty from '../empty/empty.component';
-import './newsdisplay.styles.scss';
+import './newsdisplay.styles.css';
 
 const Newsdisplay=({articlesArrayList})=> {
        

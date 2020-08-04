@@ -3,12 +3,11 @@
 	height:auto;
 	width:300px;
 	margin:10px;
-
-   img{
+}
+.card  img{
 		width:300px;
 		height:auto;
 	}
-	h3,p,h5{
+.card	h3,.card p,.card h5{
 	    padding:10px;
 	}
-}

@@ -1,5 +1,5 @@
 import React from 'react';
-import './empty.styles.scss';
+import './empty.styles.css';
 
 
 class Empty extends React.Component{
