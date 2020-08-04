@@ -28,6 +28,7 @@ class App extends React.Component {
 
 		let url = 'https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=5GzApG1kCNcrlmsHGlzBAHEYIMVZpkEz';
 
+
 		let url2= 'https://cors-anywhere.herokuapp.com/'+url;
 		fetch(url2).then(resp=>resp.json())
 		.then(data=>{
