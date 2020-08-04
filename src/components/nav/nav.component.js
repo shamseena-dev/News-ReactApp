@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 function Nav ({timer}) {
 	return (
 	<>
-		<nav className="navbar navbar-expand-md navbar-dark bg-dark nav1">
+		<nav className="navbar navbar-expand-md navbar-dark nav1">
 		
 			<div className="logo navbar-brand">
 				<img src={logo} className="App-logo " alt="Logo" width="60px" height="auto"/>
@@ -21,8 +21,7 @@ function Nav ({timer}) {
 				     <li className= "navItem nav-item">Home </li></ Link>
 				<Link to = "/health" className="navItem nav-link" >
 				     <li className= "navItem nav-item">Health </li></ Link>
-				<Link to = "/sports"  className="navItem nav-link">
-				     <li className= "navItem nav-item">Sports </li></ Link>
+				
 				</ul>
 				<h5 className="timerDisplay"> {timer}</h5>
 			</div>
