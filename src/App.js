@@ -16,6 +16,7 @@ class App extends React.Component {
 		this.state={
 			newsDisplayed:[],
 			healthNews:[],
+			sportsNews:[],
 			searchField:' ',
 			time:new Date()		
 		}
@@ -24,11 +25,9 @@ class App extends React.Component {
    /*To fetch News API */
 	componentDidMount(){
 		setInterval(()=>this.currentTime(),1000)
-<<<<<<< HEAD
+
 		let url = 'https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=5GzApG1kCNcrlmsHGlzBAHEYIMVZpkEz';
-=======
-		let url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=54406666c6d540ed989bfdf82015ec35';
->>>>>>> 25e30bbb4843215aa1658fe2c0b5314863bd76e1
+
 		let url2= 'https://cors-anywhere.herokuapp.com/'+url;
 		fetch(url2).then(resp=>resp.json())
 		.then(data=>{
@@ -40,6 +39,11 @@ class App extends React.Component {
 		.then(data=>{
 			
 			return this.setState({healthNews:data.results})
+		});
+		fetch("https://api.nytimes.com/svc/topstories/v2/sports.json?api-key=5GzApG1kCNcrlmsHGlzBAHEYIMVZpkEz").then(resp=>resp.json())
+		.then(data=>{
+			
+			return this.setState({sportsNews:data.results})
 		});
 	
 	}
@@ -59,6 +63,7 @@ class App extends React.Component {
 			return article.title.toLowerCase().includes(this.state.searchField.toLowerCase());
 			});
 	  let healthNews = this.state.healthNews;
+	  let sportsNews = this.state.sportsNews;
 		
 		let timer= <Timer timeNow={this.state.time}/>;
 
@@ -87,6 +92,7 @@ class App extends React.Component {
 				    		<Newsdisplay articlesArrayList={filteredNews} /> 
 				    	</div>)} />
 				    	<Route path = "/health" exact component = {(props)=><Newsdisplay {...props} articlesArrayList={healthNews} /> } /> 
+				    	<Route path = "/sports" exact component = {(props)=><Newsdisplay {...props} articlesArrayList={sportsNews} /> } /> 
 				   {/* <Route path = "/cnn" exact component = {(props)=><Newsdisplay {...props} articlesArrayList={cnnNews} /> } />
 				    <Route path = "/bbc" exact component = {(props)=><Newsdisplay {...props} articlesArrayList={bbcNews} /> } />
 			   */}
