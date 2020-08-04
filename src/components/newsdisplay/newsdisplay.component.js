@@ -5,7 +5,7 @@ import Empty from '../empty/empty.component';
 import './newsdisplay.styles.scss';
 
 const Newsdisplay=({articlesArrayList})=> {
-
+       
 		if(Object.keys(articlesArrayList).length === 0){
 
 		return (<Empty />)
@@ -14,14 +14,17 @@ const Newsdisplay=({articlesArrayList})=> {
 		return (<div className="newsDisplayDiv"> 
 				    
 		    {articlesArrayList.map((article,i)=>{
+
+		    	let imgurl=article.multimedia[2];
+		    	
 		    	return (
 		    		<Card 
 		    			key={i}
 			    		title={article.title}
-			    		author={article.author}
-			    		image={article.urlToImage}
-			    		content={article.content}
-			    		source={article.source.name}
+			    		
+			    		image={article.multimedia[2].url}
+			    		abstract={article.abstract}
+			    		
 			    		url={article.url}
 		    		/>
 		    	)

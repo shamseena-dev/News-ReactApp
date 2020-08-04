@@ -5,7 +5,7 @@ function Footer() {
 	return(
 		<div className="footerDiv"> 
 			<p> Copyrights (c) 2020, Shamz </p>
-			<p> Powered by NewsAPI.</p>
+			
 		</div>
 
 		);

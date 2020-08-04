@@ -9,7 +9,7 @@ function Nav ({timer}) {
 		<nav className="navbar navbar-expand-md navbar-dark bg-dark nav1">
 		
 			<div className="logo navbar-brand">
-				<img src={logo} className="App-logo " alt="Logo"/>
+				<img src={logo} className="App-logo " alt="Logo" width="60px" height="auto"/>
 				
 			</div>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,10 +19,10 @@ function Nav ({timer}) {
 				<ul className= "navLinks navbar-nav mr-auto nav-ul">
 				<Link to = "/" className="navItem nav-link">
 				     <li className= "navItem nav-item">Home </li></ Link>
-				<Link to = "/bbc" className="navItem nav-link" >
-				     <li className= "navItem nav-item">BBC </li></ Link>
-				<Link to = "/cnn"  className="navItem nav-link">
-				     <li className= "navItem nav-item">CNN </li></ Link>
+				<Link to = "/health" className="navItem nav-link" >
+				     <li className= "navItem nav-item">Health </li></ Link>
+				<Link to = "/sports"  className="navItem nav-link">
+				     <li className= "navItem nav-item">Sports </li></ Link>
 				</ul>
 				<h5 className="timerDisplay"> {timer}</h5>
 			</div>

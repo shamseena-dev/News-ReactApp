@@ -15,6 +15,7 @@ class App extends React.Component {
 		super();
 		this.state={
 			newsDisplayed:[],
+			healthNews:[],
 			searchField:' ',
 			time:new Date()		
 		}
@@ -23,13 +24,20 @@ class App extends React.Component {
    /*To fetch News API */
 	componentDidMount(){
 		setInterval(()=>this.currentTime(),1000)
-		let url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=23afc4d0ecd44a1388531295c8f399a2';
+		let url = 'https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=5GzApG1kCNcrlmsHGlzBAHEYIMVZpkEz';
 		let url2= 'https://cors-anywhere.herokuapp.com/'+url;
 		fetch(url2).then(resp=>resp.json())
 		.then(data=>{
 			
-			return this.setState({newsDisplayed:data.articles})
+			return this.setState({newsDisplayed:data.results})
 		});
+
+		fetch("https://api.nytimes.com/svc/topstories/v2/health.json?api-key=5GzApG1kCNcrlmsHGlzBAHEYIMVZpkEz").then(resp=>resp.json())
+		.then(data=>{
+			
+			return this.setState({healthNews:data.results})
+		});
+	
 	}
 
 	/*Function to set state 'searchfield' in accordance with change in input in search bar*/
@@ -46,12 +54,8 @@ class App extends React.Component {
 		let filteredNews=this.state.newsDisplayed.filter(article=>{
 			return article.title.toLowerCase().includes(this.state.searchField.toLowerCase());
 			});
-		let cnnNews = this.state.newsDisplayed.filter(article=>{
-			return article.source.name.toLowerCase().includes("CNN".toLowerCase());
-			});
-		let bbcNews = this.state.newsDisplayed.filter(article=>{
-			return article.source.name.toLowerCase().includes("BBC".toLowerCase());
-			});
+	  let healthNews = this.state.healthNews;
+		
 		let timer= <Timer timeNow={this.state.time}/>;
 
 		/*Check if the search result is empty or not 
@@ -78,9 +82,10 @@ class App extends React.Component {
 				    		<Searchbar searchChange={this.onSearchChange} />
 				    		<Newsdisplay articlesArrayList={filteredNews} /> 
 				    	</div>)} />
-				    <Route path = "/cnn" exact component = {(props)=><Newsdisplay {...props} articlesArrayList={cnnNews} /> } />
+				    	<Route path = "/health" exact component = {(props)=><Newsdisplay {...props} articlesArrayList={healthNews} /> } /> 
+				   {/* <Route path = "/cnn" exact component = {(props)=><Newsdisplay {...props} articlesArrayList={cnnNews} /> } />
 				    <Route path = "/bbc" exact component = {(props)=><Newsdisplay {...props} articlesArrayList={bbcNews} /> } />
-			   
+			   */}
 			    </Switch>
 				<Footer/>
 			  </BrowserRouter >
