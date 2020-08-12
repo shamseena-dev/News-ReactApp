@@ -33,19 +33,19 @@ class App extends React.Component {
 		fetch(url2).then(resp=>resp.json())
 		.then(data=>{
 			
-			return this.setState({newsDisplayed:data.results.slice(1,11)})
+			return this.setState({newsDisplayed:data.results.slice(1,13)})
 		});
 
 		fetch("https://api.nytimes.com/svc/topstories/v2/health.json?api-key=5GzApG1kCNcrlmsHGlzBAHEYIMVZpkEz").then(resp=>resp.json())
 		.then(data=>{
 			
-			return this.setState({healthNews:data.results.slice(1,11)})
+			return this.setState({healthNews:data.results.slice(1,13)})
 		});
 		
 		fetch("https://api.nytimes.com/svc/topstories/v2/sports.json?api-key=5GzApG1kCNcrlmsHGlzBAHEYIMVZpkEz").then(resp=>resp.json())
 		.then(data=>{
 			
-			return this.setState({sportsNews:data.results.slice(1,11)})
+			return this.setState({sportsNews:data.results.slice(1,13)})
 		});
 		
 		
